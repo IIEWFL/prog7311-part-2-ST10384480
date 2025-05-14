@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-sm p-4 bg-white">
+    <h2 class="mb-4">Employee Dashboard</h2>
+
+    <div class="list-group">
+        <a asp-action="AddFarmer" class="list-group-item list-group-item-action">
+            Add a New Farmer
+        </a>
+        <a asp-action="FarmerList" class="list-group-item list-group-item-action">
+            View Registered Farmers
+        </a>
+        <a asp-action="FilterProducts" class="list-group-item list-group-item-action">
+            Filter and View Products
+        </a>
+    </div>
+</div>

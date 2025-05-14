@@ -1,0 +1,38 @@
+﻿@model List<st10384480AgriConnect.Models.Product>
+
+@{
+    ViewData["Title"] = "Filter Products";
+}
+
+<h2 class="mb-4 text-success">Filtered Product List</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped bg-white shadow-sm">
+        <thead class="table-success">
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price (ZAR)</th>
+                <th>Owner Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>@item.Price.ToString("F2")</td>
+                    <td>@item.OwnerEmail</td>
+                    <td>@item.Role</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">No products found.</div>
+}

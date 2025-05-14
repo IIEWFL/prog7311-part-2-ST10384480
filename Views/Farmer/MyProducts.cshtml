@@ -1,0 +1,36 @@
+﻿@model List<st10384480AgriConnect.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var email = ViewBag.Email as string;
+}
+
+<h2>My Products</h2>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">You have not added any products yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-success">
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price (R)</th>
+                <th>Added By</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Category</td>
+                    <td>@p.Price</td>
+                    <td>@p.OwnerEmail (@p.Role)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
